@@ -1,6 +1,4 @@
-Para el sistema de gestión de reservas en un restaurante que hemos desarrollado, un enunciado adecuado podría ser el siguiente:
 
----
 
 ### Sistema de Gestión de Reservas para Restaurante "El Bucle infinito"
 
