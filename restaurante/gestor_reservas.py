@@ -11,7 +11,7 @@ reservas = {}
 def hacer_reservas(fecha, nombre_cliente):
     # la fecha viene en formato str
     # Vamos a convertir la fecha de formato str a objeto de datetime, para gestionarla de manera en formato de fecha
-    fecha_obj = datetime.strtime(fecha, '%Y-%m-%d').date()
+    fecha_obj = datetime.strptime(fecha, '%Y-%m-%d').date()
 
     if verificar_disponibilidad(fecha_obj):
         if fecha in reservas:
