@@ -21,7 +21,10 @@ def procesar_opcion(opcion):
         # TODO: Aqui debo programar la lógica para cancelar la reserva
     elif opcion == "3":
         fecha = input("Ingresa la fecha para listar las reservas (YYYY-MM-DD): ")
-        listar_reservas(fecha)
+        reservas = listar_reservas(fecha)
+        if reservas:
+            print("Reservas para", fecha, ":", ", ".join(reservas))
+            # TODO: hacer ejercicios con metodod de listas
     elif opcion == "4":
         print("Saliendo del programa...")
     else:
