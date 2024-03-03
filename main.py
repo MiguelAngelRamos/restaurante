@@ -24,7 +24,7 @@ def procesar_opcion(opcion):
         reservas = listar_reservas(fecha)
         if reservas:
             print("Reservas para", fecha, ":", ", ".join(reservas))
-            # TODO: hacer ejercicios con metodod de listas
+            # TODO: hacer ejercicios con metodos de listas
     elif opcion == "4":
         print("Saliendo del programa...")
     else:
