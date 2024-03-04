@@ -22,7 +22,13 @@ def hacer_reservas(fecha, nombre_cliente):
         return True
     else: 
         return False
-    
+
+def cancelar_reserva(fecha, nombre_cliente):
+    try:
+        reservas[fecha].remove(nombre_cliente)
+        return True
+    except(KeyError, ValueError):
+        return False
 
     # {
     #     "2024-04-15": ['miguel', 'macarena', 'romina']

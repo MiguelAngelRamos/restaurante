@@ -1,4 +1,4 @@
-from restaurante.gestor_reservas import hacer_reservas, listar_reservas
+from restaurante.gestor_reservas import hacer_reservas, listar_reservas, cancelar_reserva
 
 def mostrar_menu():
     print("\n *** Menú del Sistema de Reservas del Restaurante Bucle Infinito ***")
@@ -18,13 +18,15 @@ def procesar_opcion(opcion):
     elif opcion == "2":
         fecha = input("Ingresa la fecha de la reserva a cancelar (YYYY-MM-DD): ")
         nombre_cliente = input("Ingresa el nombre del cliente: ")
-        # TODO: Aqui debo programar la lógica para cancelar la reserva
+        if cancelar_reserva(fecha, nombre_cliente):
+            print("Reserva cancelada con éxito.")
+        else:
+            print("No fue posible cancelar la reserva")
     elif opcion == "3":
         fecha = input("Ingresa la fecha para listar las reservas (YYYY-MM-DD): ")
         reservas = listar_reservas(fecha)
         if reservas:
             print("Reservas para", fecha, ":", ", ".join(reservas))
-            # TODO: hacer ejercicios con metodos de listas
     elif opcion == "4":
         print("Saliendo del programa...")
     else:
