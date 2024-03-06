@@ -1,19 +1,16 @@
 # Importa datetime para trabajar fechas
 from datetime import datetime
 from .utilidades import verificar_disponibilidad
+from . import reservas
 
-# Diccionario que almacene las reservas
-#* Las claves son las fechas
-#* Los valores son las listas con los nombres de los clientes
 
-reservas = {}
-
-def hacer_reservas(fecha, nombre_cliente):
+def hacer_reservas(fecha, hora, nombre_cliente):
     # la fecha viene en formato str
     # Vamos a convertir la fecha de formato str a objeto de datetime, para gestionarla de manera en formato de fecha
-    fecha_obj = datetime.strptime(fecha, '%Y-%m-%d').date()
+    # fecha_hora = f"{fecha} {hora}"
+    # fecha_hora_obj = datetime.strptime(fecha_hora, '%Y-%m-%d %H:%M')
 
-    if verificar_disponibilidad(fecha_obj):
+    if verificar_disponibilidad(fecha, hora):
         if fecha in reservas:
             reservas[fecha].append(nombre_cliente)
         else:

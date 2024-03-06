@@ -12,8 +12,12 @@ def mostrar_menu():
 def procesar_opcion(opcion):
     if opcion == "1":
         fecha = input("Ingresa la fecha de la reserva (YYYY-MM-DD): ")
+        hora = input("Ingresa la hora de la reserva: (HH:MM): ")
         nombre_cliente = input("Ingresa el nombre del cliente: ")
-        hacer_reservas(fecha, nombre_cliente)
+        if hacer_reservas(fecha, hora, nombre_cliente):
+            print("Reserva realiza con exito")
+        else:
+            print("No fue posible realizar la reserva")
         
     elif opcion == "2":
         fecha = input("Ingresa la fecha de la reserva a cancelar (YYYY-MM-DD): ")
